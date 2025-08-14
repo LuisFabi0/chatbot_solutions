@@ -52,11 +52,6 @@ async def our_agent(state: AgentState) -> AgentState:
             "last_ai_message": [response],
             "last_human_message": state["last_human_message"],
             "contact": state["contact"]}
-    
-    print(f"******STATE CONTACT********** \n\n  {state['contact']} \n\n")
-    print(f"******Response saindo do invoke:********** \n\n  {response} \n\n")
-    print(f"******STATE saindo do AGENTE:********** \n\n  {state}")
-
     return state
 
 
@@ -68,10 +63,8 @@ async def is_tool(state: AgentState) -> AgentState:
     tool_calls = last_ai_message.get("data", {}).get("tool_calls", [])
     content = last_ai_message.get("data", {}).get("content")
     if tool_calls:
-        await trigger_webhook_tool_call(contact= state["contact"], tools= tool_calls)
         return state
     else:
-        await trigger_webhook_message(contact= state["contact"], message= content)
         return state
 
 # # Condição de parada

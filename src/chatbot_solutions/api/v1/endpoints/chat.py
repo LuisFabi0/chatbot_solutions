@@ -4,6 +4,8 @@ from fastapi import APIRouter, status, Depends, HTTPException, Response
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.responses import JSONResponse
 
+from webhook_calls import trigger_webhook_message, trigger_webhook_tool_call
+
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.exc import IntegrityError
@@ -65,12 +67,24 @@ async def post_chat(usuario: MessageRequestSchema, db: AsyncSession = Depends(ge
              "last_human_message":[HumanMessage(content=usuario.message)],
              "contact": contato}
         
-    if usuario.project == "Yamaha Cobrança IA":
-        async for step in langgraph_app.astream(state, stream_mode="values"):
+    apps = {
+        "Yamaha Cobrança IA": langgraph_app,
+        "HelpDesk IA": app
+    }
+
+    if usuario.project in apps:
+        async for step in apps[usuario.project].astream(state, stream_mode="values"):
             final_state = step
-    if usuario.project == "HelpDesk IA":
-        async for step in app.astream(state, stream_mode="values"):
-            final_state = step
+        
+    last_ai_message = messages_to_dict(final_state["last_ai_message"])[-1]
+    tool_calls = last_ai_message.get("data", {}).get("tool_calls", [])
+    content = last_ai_message.get("data", {}).get("content")
+
+    if tool_calls:
+        await trigger_webhook_tool_call(contact= state["contact"], tools= tool_calls)
+    else:
+        await trigger_webhook_message(contact= state["contact"], message= content)
+
     response: MessageResponseSchema = MessageResponseSchema(message=final_state["messages"][-1].content, contact= contato)
 
     async with db as session:
