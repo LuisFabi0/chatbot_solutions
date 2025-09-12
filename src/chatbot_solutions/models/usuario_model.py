@@ -8,9 +8,11 @@ class UsuarioModel(settings.DBBaseModel):
     __tablename__ = 'usuarios'
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    protocol = Column(String(256), nullable=False)
+    project = Column(String(256), nullable=False)
     nome = Column(String(256), nullable=True)
     document = Column(String(256), nullable=True)
-    phone = Column(String(256), index=True, nullable=False, unique=False)
-    email = Column(String(256), index=True, nullable=True, unique=False)
+    phone = Column(String(256), index=True, nullable=False)
+    email = Column(String(256), index=True, nullable=True)
     messages = Column(JSONB, nullable=False)
     processing = Column(Boolean, nullable=True)

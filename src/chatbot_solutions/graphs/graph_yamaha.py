@@ -50,29 +50,9 @@ async def our_agent(state: AgentState) -> AgentState:
     response = model.invoke(all_messages)
     state = {"messages": list(state["messages"]) + [response],
             "last_ai_message": [response],
-            "last_human_message": state["last_human_message"],
-            "contact": state["contact"]}
-    
-    print(f"******STATE CONTACT********** \n\n  {state['contact']} \n\n")
-    print(f"******Response saindo do invoke:********** \n\n  {response} \n\n")
-    print(f"******STATE saindo do AGENTE:********** \n\n  {state}")
+            "last_human_message": state["last_human_message"]}
 
     return state
-
-
-
-#Verificar tool
-async def is_tool(state: AgentState) -> AgentState:
-    last_ai_message = messages_to_dict(state["last_ai_message"])[-1]
-    print(f"-------------LASWT AI MSG ----------------------: {last_ai_message}")
-    tool_calls = last_ai_message.get("data", {}).get("tool_calls", [])
-    content = last_ai_message.get("data", {}).get("content")
-    if tool_calls:
-        await trigger_webhook_tool_call(contact= state["contact"], tools= tool_calls)
-        return state
-    else:
-        await trigger_webhook_message(contact= state["contact"], message= content)
-        return state
 
 # # Condição de parada
 # def is_tool(state: AgentState) -> str:
@@ -84,10 +64,8 @@ async def is_tool(state: AgentState) -> AgentState:
 # Criação do grafo LangGraph
 graph = StateGraph(AgentState)
 graph.add_node("agent", our_agent)
-graph.add_node("is_tool", is_tool)
 
 graph.set_entry_point("agent")
 
-graph.add_edge("agent", "is_tool")
-graph.add_edge("is_tool", END)
+graph.add_edge("agent", END)
 langgraph_app = graph.compile()

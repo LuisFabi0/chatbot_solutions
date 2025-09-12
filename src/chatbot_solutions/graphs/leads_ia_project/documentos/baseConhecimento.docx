@@ -1,0 +1,458 @@
+Sobre a Robbu
+
+A Robbu é uma empresa especializada em soluções digitais para comunicação, automação e atendimento omnichannel. Atua no desenvolvimento de plataformas e APIs que integram canais como WhatsApp, voz, e-mail, SMS, redes sociais e webchat, com foco em automação inteligente, eficiência operacional e escalabilidade para médias e grandes empresas. A Robbu é reconhecida pela robustez de suas soluções, integração com inteligência artificial e experiência comprovada em projetos de grande porte.
+
+Seção 1: Produtos Robbu
+
+Invenio
+
+Descrição:
+Plataforma omnichannel de atendimento digital, vendas e gestão, integrando múltiplos canais (WhatsApp, voz, e-mail, SMS, redes sociais, webchat) em uma única interface. Centraliza todas as conversas do cliente, independentemente do canal ou momento, proporcionando uma jornada única e contínua.
+
+Principais módulos:
+
+Invenio Live: Atendimento unificado em todos os canais digitais, com recursos como fila inteligente, distribuição automática preditiva, frases prontas, segmentação de contatos e integração com sistemas externos.
+
+Invenio Center: Gestão operacional e estratégica, com dashboards em tempo real, relatórios detalhados, criação de campanhas digitais integradas, controle de performance e definição de estratégias assertivas.
+
+Funcionalidades avançadas:
+
+Integração com WhatsApp, Facebook, Webcha, Viber, E-mail, Telegram, SMS, Voz e Vídeo.
+
+Histórico completo das conversas, ordenação por prioridade, criticidade e canal.
+
+Atendentes simultâneos e envio em massa de mensagens e arquivos.
+
+Gestão de perfis de acesso com diferentes níveis de permissão.
+
+Integração com orquestrador de regras de negócio (Maestro).
+
+Benefícios:
+
+Redução de custos operacionais.
+
+Agilidade e assertividade no atendimento.
+
+Aumento da satisfação do cliente e das taxas de conversão.
+
+Facilidade de integração com CRMs e outros sistemas legados.
+
+Voice by Robbu
+
+Descrição:
+Central de atendimento inteligente baseada em voz, com telefonia em nuvem, discador próprio, integração ao WhatsApp e relatórios com inteligência artificial. Permite a transição fluida entre atendimento por telefone e WhatsApp, mantendo o histórico do cliente para uma experiência contínua.
+
+Funcionalidades principais:
+
+Discador automático e bloqueador de chamadas para garantir qualidade no contato ativo.
+
+Gravação de chamadas em estéreo, monitoramento e análise de ligações via IA.
+
+Voicebots personalizados para automação de até 60% das interações manuais.
+
+Gestão simplificada de mais de 120 mil contatos/mês, com satisfação superior a 90%.
+
+Disponibilidade 24/7 e integração omnichannel com outros canais digitais.
+
+Monitoramento de canais digitais 
+
+Dados de operação de voz em tempo real 
+
+Ferramenta completa de monitoramento de negócio 
+
+Ferramenta de análise de aderência ao script e sentimento do cliente
+
+Transcrição automática em texto 
+
+Diferenciais:
+
+Permite que o cliente inicie o atendimento por telefone e continue pelo WhatsApp (ou vice-versa) sem perder o histórico.
+
+Integração via MetaSIP com a tecnologia oficial da Meta para voz no WhatsApp.
+
+WhatsApp Business API
+
+Descrição:
+API oficial do WhatsApp para integração empresarial, envio de mensagens em massa, automação de atendimento e múltiplos atendentes. Permite comunicação profissional e segura, com selo de verificação e integração direta com Invenio.
+
+Funcionalidades:
+
+Atendimento simultâneo por vários operadores usando um único número.
+
+Automação total ou parcial do atendimento, disponível 24/7.
+
+Disparo de mensagens em massa, notificações e campanhas.
+
+Integração com CRMs, ERPs e sistemas internos via API.
+
+Controle financeiro, relatórios e métricas de uso detalhadas.
+
+Diferenciais:
+
+Eliminação do uso de chips físicos.
+
+Segurança e privacidade de dados conforme LGPD.
+
+Flexibilidade para pequenas, médias e grandes empresas.
+
+WhatsApp Business Calling API
+
+Descrição:
+API para chamadas de voz bidirecionais via WhatsApp, permitindo que empresas e usuários iniciem ligações diretamente pelo aplicativo, com integração nativa ao Invenio.
+
+Funcionalidades:
+
+Chamadas iniciadas pela empresa (com consentimento) ou pelo usuário via botão CTA.
+
+Centralização de mensagens e chamadas em um único thread.
+
+Relatórios e métricas detalhadas de uso.
+
+Integração com bots de voz e atendimento humano.
+
+Diferenciais:
+
+Redução de custos com telefonia tradicional.
+
+Experiência de atendimento ágil e personalizada.
+
+Facilidade para resolver demandas complexas com rapidez.
+
+Carteiro Digital
+
+Descrição:
+Plataforma para envio rápido e seguro de arquivos e documentos via WhatsApp, tanto para contatos individuais. Utiliza números próprios da Robbu, sem risco de bloqueio, e oferece criptografia SSL (TLS), garantindo conformidade com a LGPD.
+
+Funcionalidades:
+
+Envio instantâneo de arquivos PDF, boletos, contratos e documentos sensíveis.
+
+Confirmação de entrega e protocolo de segurança com código de desbloqueio de 4 dígitos.
+
+Personalização de mensagens de resposta e identificação clara do remetente.
+
+Diferenciais:
+
+Não exige número de WhatsApp da empresa contratante.
+
+Envio oficial, seguro e rastreável, com feedback do cliente.
+
+Ambiente operacional intuitivo e fácil de usar.
+
+Robbu Verify
+
+Descrição:
+Ferramenta para validação, higienização e classificação de bases de contatos telefônicos.
+
+Como funciona:
+
+Verifica automaticamente se o número possui conta ativa no WhatsApp.
+
+Classifica a propensão de negócio de cada telefone, analisando o histórico de interações, tempo de resposta e resultados de campanhas.
+
+Contatos com alta interação e respostas positivas recebem maior score de propensão.
+
+Contatos novos, sem histórico, são classificados inicialmente com baixa propensão, sendo reavaliados conforme interagem.
+
+As classificações são atualizadas diariamente, sempre considerando os dados mais recentes da base.
+
+Principais benefícios:
+
+Segmentação precisa para campanhas, priorizando contatos mais propensos a conversão.
+
+Eliminação de contatos inválidos, reduzindo custos e aumentando a eficiência.
+
+Visão estratégica da base para tomada de decisão comercial e de relacionamento.
+
+OAuth WhatsApp by Robbu
+
+Descrição:
+Solução pioneira de autenticação via WhatsApp, permitindo login em qualquer plataforma sem necessidade de usuário e senha. Usuários acessam sites e aplicativos usando apenas suas credenciais do WhatsApp, com segurança avançada e verificação de identidade.
+
+Funcionalidades:
+
+Login instantâneo e seguro, sem cadastro adicional.
+
+Integração gratuita para programadores e empresas.
+
+Redução de fraudes e contas falsas.
+
+Possibilidade de uso dos dados de perfil para segmentação de marketing.
+
+Mais de 175.000 usuários já utilizaram a solução.
+
+Maestro
+
+Descrição:
+Orquestrador e padronizador de regras de negócio, centralizando a criação, revisão, aprovação e envio de templates de mensagens para múltiplos canais (exceto voz). Permite colaboração entre diferentes times e empresas, com controle total do fluxo operacional.
+
+Funcionalidades:
+
+Criação e controle centralizado de templates.
+
+Revisão e aprovação por múltiplos times (terceirizadas, QA, empresa sede).
+
+Envio de templates por qualquer broker conectado (API).
+
+Operação multicanal e redução de SLAs.
+
+Permite atualização dinâmica das regras sem necessidade de reimplantação de processos.
+
+Diferenciais:
+
+Elimina a necessidade de múltiplas plataformas e trocas de e-mails.
+
+Facilidade para operações complexas e de grande escala.
+
+Controle de versão e histórico de mudanças nas regras de negócio.
+
+Seção 2: Cases de Sucesso
+
+Yamaha do Brasil
+
+Setor: Automotivo
+Desafio:
+
+Alto volume de atendimentos, especialmente em períodos de campanhas promocionais e recalls.
+
+Elevada taxa de rechamadas, impactando a experiência do cliente e a eficiência operacional.
+
+Dificuldade em mensurar o retorno das campanhas de marketing digital.
+
+Solução Implementada:
+
+Implantação do Invenio by Robbu, integrando atendimento humano e chatbot em múltiplos canais (WhatsApp, voz e webchat).
+
+Desenvolvimento de fluxos de autoatendimento para dúvidas frequentes, agendamento de revisões e suporte a recalls.
+
+Campanhas de marketing ativas via WhatsApp, com segmentação de público e acompanhamento em tempo real dos resultados.
+
+Diferenciais da Solução:
+
+Chatbot treinado para resolver demandas de baixa complexidade, liberando operadores para casos mais críticos.
+
+Relatórios detalhados de campanhas e atendimentos, com métricas de conversão e satisfação do cliente.
+
+Integração com sistemas internos da Yamaha para atualização automática de status de atendimento e histórico do cliente.
+
+Resultados:
+
+Crescimento de mais de 500% no volume de atendimentos mensais, sem aumento proporcional da equipe.
+
+40% dos atendimentos solucionados integralmente pelo chatbot, reduzindo tempo de espera e custos operacionais.
+
+Retorno de 50% nas campanhas de marketing, com rastreamento de leads e conversões.
+
+Redução em três vezes na quantidade de rechamadas.
+
+Melhoria significativa no NPS (Net Promoter Score) e na percepção de inovação da marca.
+
+Tibério Construtora
+
+Setor: Imobiliário
+Desafio:
+
+Jornada de compra do imóvel longa e burocrática, com perda de leads entre o interesse inicial e o contato com o corretor.
+
+Falta de integração entre canais digitais e equipe comercial, dificultando o acompanhamento do funil de vendas.
+
+Solução Implementada:
+
+Implantação do Click to WhatsApp (CTX) em anúncios e landing pages, permitindo que o cliente inicie a conversa com o corretor via WhatsApp com um clique.
+
+Integração do WhatsApp com o Invenio para registro automático dos leads e distribuição inteligente para os corretores disponíveis.
+
+Treinamento dos corretores para abordagem consultiva e acompanhamento em tempo real dos leads.
+
+Diferenciais da Solução:
+
+Eliminação de etapas burocráticas e centralização do atendimento no WhatsApp, canal preferido dos clientes.
+
+Dashboards para monitoramento de performance dos corretores e análise de conversão em cada etapa do funil.
+
+Feedback automatizado para os clientes após o atendimento.
+
+Resultados:
+
+Mais de 1.400 conversas iniciadas no primeiro trimestre de uso.
+
+Geração de mais de R$ 4 milhões em vendas em apenas três meses.
+
+Aumento significativo da taxa de conversão de leads em oportunidades qualificadas.
+
+Redução do tempo médio entre o primeiro contato e o fechamento da venda.
+
+Supremo Tribunal Federal (STF)
+
+Setor: Órgão Público/Judiciário
+Desafio:
+
+Necessidade de aproximar o STF da sociedade, facilitar o acesso a informações e combater a disseminação de fake news.
+
+Alto volume de consultas sobre processos, pautas e serviços institucionais.
+
+Solução Implementada:
+
+Canal oficial de atendimento via WhatsApp com chatbot verificado, integrado ao Invenio.
+
+O assistente virtual oferece informações sobre processos, pautas, decisões e serviços do STF, além de orientações sobre protocolos e dúvidas frequentes.
+
+Notificações automáticas para acompanhamento de processos e novidades institucionais.
+
+Diferenciais da Solução:
+
+Atendimento 24/7, com linguagem acessível e segura.
+
+Capacidade de escalabilidade para grandes volumes de interações diárias.
+
+Combate ativo à desinformação, direcionando o cidadão para fontes oficiais.
+
+Resultados:
+
+Potencial de impacto de até 100 mil pessoas por dia.
+
+Redução significativa do volume de ligações e e-mails recebidos.
+
+Melhoria na transparência e na percepção de acessibilidade do STF.
+
+Paschoalotto
+
+Setor: Serviços Financeiros/Recuperação de Crédito
+Desafio:
+
+Necessidade de digitalizar o atendimento e aumentar a eficiência na recuperação de crédito.
+
+Integração de múltiplos canais de atendimento e sistemas legados.
+
+Solução Implementada:
+
+Plataforma Invenio personalizada, com chatbot de IA para autoatendimento e integração omnichannel (WhatsApp, voz, e-mail, SMS).
+
+Integração com sistemas de cobrança e plataformas de pagamento, permitindo negociação e quitação de dívidas pelo WhatsApp.
+
+Monitoramento em tempo real de indicadores de performance e satisfação do cliente.
+
+Diferenciais da Solução:
+
+Atendimento digital 24x7, reduzindo dependência de call center tradicional.
+
+Chatbot com IA capaz de negociar propostas, emitir boletos e realizar acordos automatizados.
+
+Relatórios detalhados para acompanhamento da efetividade das campanhas e ações de cobrança.
+
+Resultados:
+
+Mais de 100 mil atendimentos mensais.
+
+22% de aumento na taxa de resolução de demandas.
+
+Faturamento digital subiu de 8% para 17%.
+
+30% da carteira recuperada com apenas um chatbot.
+
+Redução significativa de custos operacionais e aumento da satisfação dos clientes.
+
+Ministério da Saúde
+
+Setor: Saúde Pública
+Desafio:
+
+Comunicação eficiente com milhões de brasileiros sobre campanhas de vacinação, prevenção e serviços de saúde.
+
+Redução de erros cadastrais e dúvidas recorrentes da população.
+
+Solução Implementada:
+
+Chatbot “Ministério da Saúde Responde” via WhatsApp, integrado ao Invenio.
+
+Disponibilização de informações sobre campanhas, agendamento de vacinação, esclarecimento de dúvidas e atualização cadastral.
+
+Relatórios de atendimento e análise de dados para aprimorar campanhas futuras.
+
+Diferenciais da Solução:
+
+Capacidade de atendimento massivo e simultâneo.
+
+Redução do tempo de resposta e aumento da assertividade nas informações.
+
+Facilidade de acesso para públicos de todas as idades.
+
+Resultados:
+
+Mais de 50% dos atendimentos resolvidos pelo chatbot.
+
+Redução de 30% em erros cadastrais.
+
+Triplicação do número de atendimentos mensais.
+
+Ampliação do alcance das campanhas e melhoria na adesão da população.
+
+Liberty Seguros
+
+Setor: Seguros
+Desafio:
+
+Alto volume de erros cadastrais e baixa taxa de resolução de demandas no primeiro contato.
+
+Solução Implementada:
+
+Plataforma Invenio para automação e atendimento via WhatsApp e outros canais digitais.
+
+Chatbot para triagem de solicitações, atualização cadastral e encaminhamento de casos complexos para operadores.
+
+Diferenciais da Solução:
+
+Redução de etapas manuais e automação de processos repetitivos.
+
+Relatórios operacionais para identificação de gargalos e oportunidades de melhoria.
+
+Resultados:
+
+50% dos casos resolvidos apenas pelo chatbot.
+
+30% de redução em erros cadastrais.
+
+Triplicação do volume de atendimentos mensais.
+
+Média de 20 mil contatos por mês, com aumento do índice de satisfação dos clientes.
+
+Defesa Civil Nacional
+
+Setor: Defesa Civil/Gestão de Riscos
+Desafio:
+
+Garantir o envio ágil e confiável de alertas de desastres naturais para a população em todo o país.
+
+Solução Implementada:
+
+Ferramenta integrada ao WhatsApp para envio automatizado de alertas em tempo real, segmentados por região e tipo de ocorrência.
+
+Integração com sistemas meteorológicos e de monitoramento de riscos.
+
+Diferenciais da Solução:
+
+Inovação no uso do WhatsApp como canal oficial de alertas públicos, com ampla cobertura nacional.
+
+Possibilidade de envio de mensagens segmentadas e acompanhamento de recebimento.
+
+Resultados:
+
+19.098 alertas enviados em 2024.
+
+Pioneirismo mundial no uso do WhatsApp para comunicação emergencial.
+
+Redução do tempo de resposta e aumento da efetividade das ações preventivas.
+
+Instruções para a IA SDR
+
+Sempre inicie a interação perguntando sobre a empresa e o segmento do cliente.
+
+Identifique as dores e necessidades do usuário.
+
+Apresente os produtos Robbu de acordo com o contexto e as necessidades identificadas.
+
+Utilize os cases de sucesso como exemplos práticos para ilustrar o impacto das soluções.
+
+Destaque diferenciais, integrações e métricas relevantes para cada produto.
+
+Oriente o usuário sobre próximos passos, como demonstrações, integrações ou contato com especialistas.

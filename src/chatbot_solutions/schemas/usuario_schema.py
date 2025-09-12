@@ -14,13 +14,14 @@ class Channel(BaseModel):
 class Contact(BaseModel):
     name: str
     document: str
+    project: str
+    protocol: str
     channel: Channel
 
 class AgentState(TypedDict):
     messages: Annotated[Sequence[BaseMessage], add_messages]
     last_ai_message: AIMessage
     last_human_message: HumanMessage
-    contact: Contact
 
 
 class ToolCallSchema(BaseModel):
@@ -28,19 +29,21 @@ class ToolCallSchema(BaseModel):
     content: str
 
 class ToolCallResponseSchema(BaseModel):
-    tool_calls: List[ToolCallSchema]
+    data: List[ToolCallSchema]
+    contact: Contact
 
 class ToolCallRequestSchema(BaseModel):
     tool_calls: List[ToolCallSchema]
+    webhook_url: str
     contact: Contact
 
 class MessageResponseSchema(BaseModel):
-    message: str
+    data: str
     contact: Contact
 
 class MessageRequestSchema(BaseModel):
     message: str
-    project: str
+    webhook_url: str
     contact: Contact
 
 class UsuarioSchema(BaseModel):
@@ -49,6 +52,9 @@ class UsuarioSchema(BaseModel):
     document: str
     phone: str
     email: EmailStr
+    project: str
+    protocol: str
+    processing: bool
     messages: List[Dict[str, Any]]
     class Config:
         orm_mode=True
