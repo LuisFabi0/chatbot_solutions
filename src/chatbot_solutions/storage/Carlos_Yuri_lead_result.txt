@@ -1,0 +1,18 @@
+Resultado da Qualificação do Lead
+===============================
+Nome: Carlos Yuri
+Email: tiocarlinhos@gmail.com
+Site: sitedeteste.com
+Cargo: Gerente
+Número: 21954545454
+CNPJ: 00.000.000/0001-91
+Interesse: chatbots com IA e Carteiro Digital
+Tamanho do Time: 25
+Segmento: varejo
+Status do Lead: quente
+
+Explicação:
+Este lead é considerado QUENTE porque atende aos critérios:
+- Empresa com mais de 5 funcionários
+- Possui site ativo
+- Tem interesse real em algum produto/case da Robbu

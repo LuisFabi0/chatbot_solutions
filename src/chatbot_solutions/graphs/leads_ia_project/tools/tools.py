@@ -1,5 +1,6 @@
 from __future__ import annotations
 import os, re
+from pathlib import Path
 from typing import Any, Dict
 from ..crew_ai_agents.agents_schema import TechnicalCrewExecutor
 from langchain_core.tools import tool
@@ -58,6 +59,7 @@ def registrar_lead(status_lead: str) -> str:
             "Site": LEAD_STATE.get("siteEmpresa"),
             "Cargo": LEAD_STATE.get("cargoCliente"),
             "Número": LEAD_STATE.get("numeroCliente"),
+            "CNPJ": LEAD_STATE.get("cnpj"),
             "Interesse": LEAD_STATE.get("interesse_produto"),
             "Tamanho do Time": LEAD_STATE.get("tamanho_time"),
             "Segmento": LEAD_STATE.get("segmento"),
@@ -82,13 +84,71 @@ def registrar_lead(status_lead: str) -> str:
 
         lines = ["Resultado da Qualificação do Lead\n", "===============================\n"]
         for k, v in lead_info.items():
-            lines.append(f"{k}: {v or 'Não informado'}\n")
+            # Garante que campos essenciais sempre apareçam como "Não informado" se vazios
+            if k in ["CNPJ", "Interesse", "Tamanho do Time"] and not v:
+                lines.append(f"{k}: Não informado\n")
+            else:
+                lines.append(f"{k}: {v or 'Não informado'}\n")
         lines.append("\nExplicação:\n")
         lines.append(explanation)
 
-        filename = f"lead_result_{(LEAD_STATE.get('emailLead') or 'unknown').replace('@','at').replace('.','')}.txt"
-        with open(filename, "w", encoding="utf-8") as f:
+        # Usa o nome do cliente como nome do arquivo, removendo caracteres especiais
+        nome_cliente = (LEAD_STATE.get('nomeLead') or 'cliente_desconhecido').strip()
+        # Remove caracteres especiais e espaços para criar um nome de arquivo válido
+        nome_arquivo = re.sub(r'[^\w\s-]', '', nome_cliente).strip()
+        nome_arquivo = re.sub(r'[-\s]+', '_', nome_arquivo)
+        filename = f"{nome_arquivo}_lead_result.txt"
+
+        # Encontra a pasta storage na raiz do projeto
+        try:
+            # Sobe na hierarquia até encontrar a pasta storage na raiz
+            current_path = Path(__file__).resolve()
+            project_root = None
+            
+            # Procura pela pasta storage subindo na hierarquia
+            for parent in current_path.parents:
+                storage_path = parent / "storage"
+                # Verifica se é a pasta storage da raiz (não a do projeto leads)
+                if storage_path.exists() and (parent / "pyproject.toml").exists():
+                    project_root = parent
+                    break
+            
+            if not project_root:
+                # Fallback: usa a pasta storage relativa ao diretório atual de execução
+                project_root = Path.cwd()
+                
+        except Exception:
+            project_root = Path.cwd()
+
+        output_dir = project_root / "storage"
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        file_path = output_dir / filename
+        with open(file_path, "w", encoding="utf-8") as f:
             f.writelines(lines)
+        
+        # Envia o arquivo por email automaticamente
+        try:
+            from ..email.email_sender import enviar_arquivo_txt_por_email
+            resultado_email = enviar_arquivo_txt_por_email(str(file_path))
+            if resultado_email:
+                print(f"✅ Email enviado automaticamente com o arquivo: {file_path}")
+            else:
+                print(f"❌ Falha no envio do email para o arquivo: {file_path}")
+        except ImportError as e:
+            print(f"❌ Erro de importação do email_sender: {e}")
+        except Exception as e:
+            print(f"❌ Erro inesperado ao enviar email: {e}")
+            import traceback
+            traceback.print_exc()
+        
+        # Atualiza o dashboard HTML automaticamente
+        try:
+            from utils.dashboard_updater import update_dashboard
+            update_dashboard()
+        except Exception:
+            pass
+            
     except Exception:
         pass
 
@@ -101,7 +161,45 @@ def salvar_dado_lead(campo: str, valor: str) -> str:
     Atualiza LEAD_STATE[campo] e tenta sincronizar com RD (create/update) quando houver e-mail.
     """
     campo = (campo or "").strip()
-    LEAD_STATE[campo] = (valor or "").strip() or None
+    valor_normalizado = (valor or "").strip() or None
+
+    if not campo:
+        return _safe_json({
+            "ok": False,
+            "erro": "campo inválido",
+            "lead": LEAD_STATE
+        })
+
+    campo_normalizado = re.sub(r"[^a-z0-9]", "", campo.lower())
+    cnpj_aliases = {
+        "cnpj",
+        "cnpjcliente",
+        "cnpjempresa",
+        "cnpjcpf",
+        "cpfcnpj",
+        "cpfcnpjcliente",
+        "document",
+        "documento",
+    }
+
+    if campo_normalizado in cnpj_aliases:
+        LEAD_STATE["cnpj"] = valor_normalizado
+        # Append CNPJ to cnpjs.txt (one per line)
+        try:
+            cnpj_file_path = os.path.join(
+                os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+                "txt_files",
+                "cnpjs.txt"
+            )
+            with open(cnpj_file_path, "a", encoding="utf-8") as f:
+                if valor_normalizado:
+                    f.write(f"{valor_normalizado}\n")
+        except Exception:
+            pass
+        if campo != "cnpj":
+            LEAD_STATE[campo] = valor_normalizado
+    else:
+        LEAD_STATE[campo] = valor_normalizado
 
     rd_result: Any = None
     try:
